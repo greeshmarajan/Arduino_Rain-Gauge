@@ -4,14 +4,11 @@
 
 What is it?
 
-                   A rain gauge is an instrument you can use to measure the amount of rainfall your area receives in a given time period.
-
-
+A rain gauge is an instrument you can use to measure the amount of rainfall your area receives in a given time period.
 
 How to connect Rain Gauge to arduino?
 
-
-                  The ends of the reed switch are connected to Ground and Digital Pin 9.
+The ends of the reed switch are connected to Ground and Digital Pin 9.
 
 
 Source code :
@@ -61,16 +58,22 @@ void loop(){
    REEDCOUNT = REEDCOUNT + 1;                     //Add 1 to the count of bucket tips
 
    old_val = val;                                 //Make the old value equal to the current value
-   volume_of_rain = (5.94*REEDCOUNT)/1000;        //volume of rain that fell 
-   area_of_funnel = (3.14/4)*0.165*0.165;         //area of the funnel
-   depth_of_rain = volume_of_rain/area_of_funnel; //depth of rain
+
+volume_of_rain = (5.94*REEDCOUNT)/1000;        //volume of rain that fell 
+
+area_of_funnel = (3.14/4)*0.165*0.165;         //area of the funnel
+
+depth_of_rain = volume_of_rain/area_of_funnel; //depth of rain
 
    Serial.print("Count = ");
-   Serial.println(REEDCOUNT);                     //Output the count to the serial monitor
+
+Serial.println(REEDCOUNT);                     //Output the count to the serial monitor
 
    Serial.print("rain = ");
-   Serial.print(depth_of_rain);                  //Output of depth_of_rain
-   Serial.println(" mm ");
+
+Serial.print(depth_of_rain);                  //Output of depth_of_rain
+
+Serial.println(" mm ");
 
 
  }
