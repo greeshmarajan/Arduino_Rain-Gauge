@@ -22,9 +22,9 @@ float depth_of_rain;
 
 void setup(){
 
- Serial.begin(9600);
+Serial.begin(9600);
 
- pinMode (REED, INPUT_PULLUP);                   //This activates the internal pull up resistor
+pinMode (REED, INPUT_PULLUP);                   //This activates the internal pull up resistor
 
 }
 
@@ -41,15 +41,22 @@ void loop(){
    REEDCOUNT = REEDCOUNT + 1;                     //Add 1 to the count of bucket tips
 
    old_val = val;                                 //Make the old value equal to the current value
+   
    volume_of_rain = (5.94*REEDCOUNT)/1000;        //volume of rain that fell 
+   
    area_of_funnel = (3.14/4)*0.165*0.165;         //area of the funnel
+   
    depth_of_rain = volume_of_rain/area_of_funnel; //depth of rain
+   
 
    Serial.print("Count = ");
+   
    Serial.println(REEDCOUNT);                     //Output the count to the serial monitor
 
    Serial.print("rain = ");
+   
    Serial.print(depth_of_rain);                  //Output of depth_of_rain
+   
    Serial.println(" mm ");
 
 
