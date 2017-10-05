@@ -65,14 +65,12 @@ area_of_funnel = (3.14/4)*0.165*0.165;         //area of the funnel
 
 depth_of_rain = volume_of_rain/area_of_funnel; //depth of rain
 
-   Serial.print("Count = ");
+ Serial.print("Count = ");
 
 Serial.println(REEDCOUNT);                     //Output the count to the serial monitor
-
-   Serial.print("rain = ");
+Serial.print("rain = ");
 
 Serial.print(depth_of_rain);                  //Output of depth_of_rain
-
 Serial.println(" mm ");
 
 
