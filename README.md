@@ -16,8 +16,11 @@ int old_val = 0;                                //Old value of reed switch
 
 int REEDCOUNT = 0;                              //This is the variable that hold the count of switching
 
+
 float volume_of_rain;
+
 float area_of_funnel;
+
 float depth_of_rain;
 
 void setup(){
@@ -34,28 +37,49 @@ void loop(){
  val = digitalRead(REED);                         //Read the status of the Reed swtich
 
 
- if ((val == LOW) && (old_val == HIGH)){          //Check to see if the status has changed
+
+
+if ((val == LOW) && (old_val == HIGH)){          //Check to see if the status has changed
 
    delay(10);                                     // Delay put in to deal with any "bouncing" in the switch.
 
-   REEDCOUNT = REEDCOUNT + 1;                     //Add 1 to the count of bucket tips
+   
+ REEDCOUNT = REEDCOUNT + 1;                     //Add 1 to the count of bucket tips
 
-   old_val = val;                                 //Make the old value equal to the current value
    
-   volume_of_rain = (5.94*REEDCOUNT)/1000;        //volume of rain that fell 
+ old_val = val;                                 //Make the old value equal to the current value
    
-   area_of_funnel = (3.14/4)*0.165*0.165;         //area of the funnel
    
-   depth_of_rain = volume_of_rain/area_of_funnel; //depth of rain
+   
+ volume_of_rain = (5.94*REEDCOUNT)/1000;        //volume of rain that fell 
+   
+   
+   
+   
+ area_of_funnel = (3.14/4)*0.165*0.165;         //area of the funnel
+   
+   
+   
+   
+ depth_of_rain = volume_of_rain/area_of_funnel; //depth of rain
    
 
-   Serial.print("Count = ");
+ 
+ Serial.print("Count = ");
    
-   Serial.println(REEDCOUNT);                     //Output the count to the serial monitor
+  
+ Serial.println(REEDCOUNT);                     //Output the count to the serial monitor
 
-   Serial.print("rain = ");
    
-   Serial.print(depth_of_rain);                  //Output of depth_of_rain
+  
+  Serial.print("rain = ");
+   
+  
+ 
+ Serial.print(depth_of_rain);                  //Output of depth_of_rain
+   
+   
+   
    
    Serial.println(" mm ");
 
