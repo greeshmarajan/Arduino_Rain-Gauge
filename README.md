@@ -27,48 +27,48 @@ void setup(){
 
 Serial.begin(9600);
 
-pinMode (REED, INPUT_PULLUP);                   //This activates the internal pull up resistor
+pinMode (REED, INPUT_PULLUP);                                        //This activates the internal pull up resistor
 
 }
 
 
 void loop(){
 
- val = digitalRead(REED);                         //Read the status of the Reed swtich
+ val = digitalRead(REED);                                                //Read the status of the Reed swtich
 
 
 
 
-if ((val == LOW) && (old_val == HIGH)){          //Check to see if the status has changed
+if ((val == LOW) && (old_val == HIGH)){                                    //Check to see if the status has changed
 
-   delay(10);                                     // Delay put in to deal with any "bouncing" in the switch.
-
-   
- REEDCOUNT = REEDCOUNT + 1;                     //Add 1 to the count of bucket tips
+   delay(10);                                                             // Delay put in to deal with any "bouncing" in the switch.
 
    
- old_val = val;                                 //Make the old value equal to the current value
+ REEDCOUNT = REEDCOUNT + 1;                                                //Add 1 to the count of bucket tips
+
+   
+ old_val = val;                                                            //Make the old value equal to the current value
    
    
    
- volume_of_rain = (5.94*REEDCOUNT)/1000;        //volume of rain that fell 
-   
-   
-   
-   
- area_of_funnel = (3.14/4)*0.165*0.165;         //area of the funnel
+ volume_of_rain = (5.94*REEDCOUNT)/1000;                                 //volume of rain that fell 
    
    
    
    
- depth_of_rain = volume_of_rain/area_of_funnel; //depth of rain
+ area_of_funnel = (3.14/4)*0.165*0.165;                                    //area of the funnel
+   
+   
+   
+   
+ depth_of_rain = volume_of_rain/area_of_funnel;                           //depth of rain
    
 
  
  Serial.print("Count = ");
    
-  
- Serial.println(REEDCOUNT);                     //Output the count to the serial monitor
+   
+ Serial.println(REEDCOUNT);                                               //Output the count to the serial monitor
 
    
   
@@ -76,7 +76,7 @@ if ((val == LOW) && (old_val == HIGH)){          //Check to see if the status ha
    
   
  
- Serial.print(depth_of_rain);                  //Output of depth_of_rain
+ Serial.print(depth_of_rain);                                           //Output of depth_of_rain
    
    
    
@@ -89,7 +89,7 @@ if ((val == LOW) && (old_val == HIGH)){          //Check to see if the status ha
 
  else {
 
-   old_val = val;                                //If the status hasn't changed then do nothing
+   old_val = val;                                                            //If the status hasn't changed then do nothing
 
  }
 
