@@ -4,6 +4,7 @@
 
 What is it?
 A rain gauge is an instrument you can use to measure the amount of rainfall your area receives in a given time period.
+
 How to connect Rain Gauge to arduino?
 The ends of the reed switch are connected to Ground and Digital Pin 9.
 
